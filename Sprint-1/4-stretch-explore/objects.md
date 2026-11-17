@@ -19,5 +19,5 @@ What does `console` store?
 It stores an Object.
 
 What does the syntax `console.log` or `console.assert` mean? In particular, what does the `.` mean?
-We call the function log inside the object console.
-When you type console then type `.` you open all the tools/functions insode the console object and you can choose the function you want.
+The `.` accesses a property (such as the `log` or `assert` method) inside the `console` object without running it. Adding parentheses `()` after the name is what actually calls (runs) the function.
+When you type `console` and then `.`, you can access all the properties and methods inside the `console` object and choose the one you want.
