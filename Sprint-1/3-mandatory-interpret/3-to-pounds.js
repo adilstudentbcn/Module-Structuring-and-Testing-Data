@@ -1,28 +1,20 @@
-const penceString = "0p";
-console.log("line 1 - penceString :", penceString);
+const penceString = "399p";
 
 const penceStringWithoutTrailingP = penceString.substring(
   0,
   penceString.length - 1
 );
-console.log(
-  "line 3 - penceStringWithoutTrailingP :",
-  penceStringWithoutTrailingP
-);
 
 const paddedPenceNumberString = penceStringWithoutTrailingP.padStart(3, "0");
-console.log("line 12 - paddedPenceNumberString :", paddedPenceNumberString);
 
 const pounds = paddedPenceNumberString.substring(
   0,
   paddedPenceNumberString.length - 2
 );
-console.log("line 18 - pounds :", pounds);
 
 const pence = paddedPenceNumberString
   .substring(paddedPenceNumberString.length - 2)
   .padEnd(2, "0");
-console.log("line 23 - pence :", pence);
 
 console.log(`£${pounds}.${pence}`);
 
