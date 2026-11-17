@@ -1,5 +1,5 @@
-const HourClockTime12 = "20:53";
-const HourClockTime24 = "08:53";
+const twelveHourClockTime = "20:53";
+const twentyFourHourClockTime = "08:53";
 
 //Error: SyntaxError: Invalid or unexpected token
 
