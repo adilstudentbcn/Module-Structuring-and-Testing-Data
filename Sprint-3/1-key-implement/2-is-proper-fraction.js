@@ -8,7 +8,10 @@
 // write one test at a time, and make it pass, build your solution up methodically
 
 function isProperFraction(numerator, denominator) {
-    if (numerator < denominator) return true;
+  if (denominator === 0) {
+    return false;
+  }
+  return Math.abs(numerator) < Math.abs(denominator);
 }
 
 // here's our helper again
@@ -40,14 +43,34 @@ assertEquals(improperFraction, false);
 // target output: true
 // Explanation: The fraction -4/7 is a proper fraction because the absolute value of the numerator (4) is less than the denominator (7). The function should return true.
 const negativeFraction = isProperFraction(-4, 7);
-// ====> complete with your assertion
+assertEquals(negativeFraction, true);
 
 // Equal Numerator and Denominator check:
 // Input: numerator = 3, denominator = 3
 // target output: false
 // Explanation: The fraction 3/3 is not a proper fraction because the numerator is equal to the denominator. The function should return false.
 const equalFraction = isProperFraction(3, 3);
-// ====> complete with your assertion
+assertEquals(equalFraction, false);
 
 // Stretch:
-// What other scenarios could you test for?
+
+// Negative Improper Fraction check:
+// Input: numerator = -10, denominator = 7
+// target output: false
+// Explanation: The fraction -10/7 is not a proper fraction because the absolute value of the numerator (10) is greater than the denominator (7). The function should return false.
+const negativeImproperFraction = isProperFraction(-10, 7);
+assertEquals(negativeImproperFraction, false);
+
+// Negative Denominator check:
+// Input: numerator = 2, denominator = -3
+// target output: true
+// Explanation: The fraction 2/-3 is a proper fraction because the absolute value of the numerator (2) is less than the absolute value of the denominator (3). The function should return true.
+const negativeDenominator = isProperFraction(2, -3);
+assertEquals(negativeDenominator, true);
+
+// Zero Denominator check:
+// Input: numerator = 2, denominator = 0
+// target output: false
+// Explanation: The fraction 2/0 is not a proper fraction because division by zero is undefined. The function should return false.
+const zeroDenominator = isProperFraction(2, 0);
+assertEquals(zeroDenominator, false);
